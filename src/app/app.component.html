@@ -4,11 +4,12 @@
  {{name}} //string interpolation 
 -->
 
-<input #newtaskElem type="text" [(ngModel)]="newTask" (keyup)="errMsg = '';">
+<input #newtaskElem type="text" [(ngModel)]="newTask" (keyup)="errMsg = '';"> <br>
 
-<button *ngIf="!isEdit" (click)="add(newtaskElem.value)">Add Task</button>
-<button *ngIf="isEdit" (click)="update()">Edit Task</button>
-<button *ngIf="isEdit" (click)="cancel()">Cancel</button>
+<button class="btn btn-primary" *ngIf="!isEdit" (click)="add(newtaskElem.value)">Add Task</button>
+<button class="btn btn-primary" *ngIf="isEdit" (click)="update()">Edit Task</button>
+<button class="btn btn-primary" *ngIf="isEdit" (click)="cancel()">Cancel</button>
+<br>
 
 <small>{{errMsg}}</small>
 <!-- <div *ngIf="b == true">Task is not given</div> -->
@@ -17,7 +18,8 @@
     <li *ngFor="let task of todo, index as i ">
         {{task}}
         <!-- <button (click)="deleteTask(task)">Delete task</button> -->
-        <button (click)="deleteTask(i)">Delete task</button>
-        <button (click)="editTask(i)">Edit task</button>
+        <button class="btn btn-primary" (click)="deleteTask(i)">Delete task</button>
+        <button class="btn btn-primary" (click)="editTask(i)">Edit task</button>
+        
     </li>
 </ol>
