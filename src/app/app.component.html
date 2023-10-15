@@ -7,8 +7,8 @@
 <input #newtaskElem type="text" [(ngModel)]="newTask" (keyup)="errMsg = '';"> <br>
 
 <button class="btn btn-primary" *ngIf="!isEdit" (click)="add(newtaskElem.value)">Add Task</button>
-<button class="btn btn-primary" *ngIf="isEdit" (click)="update()">Edit Task</button>
-<button class="btn btn-primary" *ngIf="isEdit" (click)="cancel()">Cancel</button>
+<button class="btn btn-sm btn-primary" *ngIf="isEdit" (click)="update()">Edit Task</button>
+<button class="btn btn-sm btn-primary" *ngIf="isEdit" (click)="cancel()">Cancel</button>
 <br>
 
 <small>{{errMsg}}</small> <br>
